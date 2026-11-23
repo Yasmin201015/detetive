@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecos de Hollow Creek</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="marca">🌙</div>
+    <div>
+      <h1>ECOS DE HOLLOW CREEK</h1>
+      <p>UMA INVESTIGAÇÃO SOBRENATURAL</p>
+    </div>
+  </header>
+
+  <main class="jogo">
+
+    <section id="telaInicio" class="tela">
+      <div class="capa">
+        <div class="lua">🌕</div>
+        <p class="tag">ARQUIVO CONFIDENCIAL Nº 024</p>
+        <h2>Os mortos ainda têm algo a dizer...</h2>
+        <p>
+          Uma cidade esquecida. Um desaparecimento sem solução.
+          Uma carta enviada por alguém que deveria estar morto.
+        </p>
+        <input id="nome" type="text" maxlength="25" placeholder="Nome do detetive">
+        <button id="comecar" class="botao">INICIAR INVESTIGAÇÃO</button>
+        <small>MAGICMOON STUDIO APRESENTA</small>
+      </div>
+    </section>
+
+    <section id="telaJogo" class="tela escondido">
+
+      <div class="painel-superior">
+        <div>
+          <span>DETETIVE</span>
+          <strong id="nomeDetetive">Investigador</strong>
+        </div>
+        <div>
+          <span>EVIDÊNCIAS</span>
+          <strong id="contador">0/5</strong>
+        </div>
+        <button id="btnMapa" class="botao pequeno">🗺 MAPA</button>
+      </div>
+
+      <div id="mapa" class="mapa">
+        <div class="titulo-secao">
+          <span>HOLLOW CREEK</span>
+          <h2>Escolha seu próximo destino</h2>
+          <p>Explore a cidade e procure pistas sobre o desaparecimento.</p>
+        </div>
+
+        <div class="locais">
+          <button class="local" data-local="mansao">
+            <span>🏚️</span>
+            <strong>Mansão Blackwood</strong>
+            <small>O local do desaparecimento</small>
+          </button>
+
+          <button class="local" data-local="cemiterio">
+            <span>⚰️</span>
+            <strong>Cemitério antigo</strong>
+            <small>Onde os segredos foram enterrados</small>
+          </button>
+
+          <button class="local" data-local="delegacia">
+            <span>🚔</span>
+            <strong>Delegacia</strong>
+            <small>Arquivos do caso original</small>
+          </button>
+
+          <button class="local" data-local="antiquario">
+            <span>🕰️</span>
+            <strong>Antiquário</strong>
+            <small>Objetos de uma época esquecida</small>
+          </button>
+
+          <button class="local" data-local="asilo">
+            <span>🏥</span>
+            <strong>Asilo abandonado</strong>
+            <small>O último lugar onde Eleanor foi vista</small>
+          </button>
+        </div>
+
+        <div class="inventario">
+          <h3>🎒 Inventário</h3>
+          <p id="inventarioVazio">Você ainda não encontrou nenhum objeto.</p>
+          <div id="itens"></div>
+          <small>Clique em um item para selecioná-lo e depois use-o em um objeto do cenário.</small>
+        </div>
+      </div>
+
+      <div id="cenario" class="cenario escondido">
+        <div class="cenario-topo">
+          <button id="voltarMapa" class="botao pequeno">← VOLTAR AO MAPA</button>
+          <div>
+            <span id="categoriaLocal">LOCAL DA INVESTIGAÇÃO</span>
+            <h2 id="nomeLocal">Mansão Blackwood</h2>
+          </div>
+        </div>
+
+        <div class="imagem-cenario" id="imagemCenario">
+          <div class="neblina"></div>
+          <div id="objetos" class="objetos"></div>
+        </div>
+
+        <div class="descricao-cenario">
+          <p id="descricaoLocal"></p>
+          <p id="instrucao">Clique nos objetos para investigar.</p>
+        </div>
+      </div>
+
+      <div class="diario">
+        <h3>📓 Diário do detetive</h3>
+        <div id="anotacoes">
+          <p>Uma carta misteriosa trouxe você até Hollow Creek...</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="telaFinal" class="tela escondido">
+      <div class="final">
+        <div id="iconeFinal">🔎</div>
+        <p class="tag">ARQUIVO ENCERRADO</p>
+        <h2 id="tituloFinal"></h2>
+        <p id="textoFinal"></p>
+        <button id="reiniciar" class="botao">JOGAR NOVAMENTE</button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="modal" class="modal escondido">
+    <div class="modal-conteudo">
+      <button id="fecharModal" class="fechar">×</button>
+      <div id="modalIcone">🔎</div>
+      <h2 id="modalTitulo"></h2>
+      <p id="modalTexto"></p>
+      <div id="modalAcoes"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
